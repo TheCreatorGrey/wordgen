@@ -66,22 +66,25 @@ function randInt(range1, range2) {
 
 
 function generateOne() {
-    let structure = inputStructure.value.split(",")
+    // Separate structure input by commas
+    let structure = inputStructure.value.split(/,\s*/)
     let result = ""
 
-    for (let s of structure) {
-        console.log(s)
+    for (let item of structure) {
+        // Pick a random item from between the slashes in
+        // the item, if any
+        let chosen = randomItem(item.split("/"))
 
-        fragment = randomItem(s.split("/"))
-        marker = s[1]
-
-        let group = document.getElementById(`${s}-input`)
+        let group = document.getElementById(`${chosen}-input`)
         if (group) {
+            // If the first letter of the fragment matches a group letter,
+            // pick a random value from that group
             result += randomItem(
-                group.value.split(", ")
+                group.value.split(/,\s*/)
             )
         } else {
-            result += fragment
+            // Otherwise, interpret literally
+            result += chosen;
         }
     }
 

@@ -11,18 +11,21 @@
     <h1>
         Word Generator for Conlangs
     </h1>
-
-    <h3 style="color: red;">Under development!!</h3>
 <span style="white-space: pre-wrap;">
 Here's how this works:
 
 The generator will go through every comma separated value
 in the "structure" input below.
 
-If the value matches the letter ID of any of the groups 
-in the section below, it will pick a random value from 
-that group. Otherwise, it will interpret it literally
-and add it to the word.
+If the value contains a forward slash (/), it will pick
+a random item from between the slash(es). For example,
+an value like "ed/ing" would add either "ed" or "ing". 
+Also, if you put a slash following by nothing, the value 
+will have a 50% chance of being added to the word.
+If the value or item matches the letter ID of any of 
+the groups  in the section below, it will pick a random 
+value from that group. Otherwise, it will interpret it 
+literally and add it to the word.
 
 This process will be repeated for the number of times
 specified in the input below (amount).
@@ -31,7 +34,7 @@ To add a group, enter a letter ID and alias (name)
 into the corresponding input boxes, then press "+ Add".
 
 
-Based on the AwkWords tool.
+Inspired by the AwkWords tool.
 <hr>
 </span>
 
@@ -48,9 +51,9 @@ Based on the AwkWords tool.
     <h2>Specification: </h2>
 
     <span>
-        Structure: (e.g. CVCV)
+        Structure: (e.g. C,V,C,V)
     </span>
-    <textarea class="field" name="structure" id="structure_input">C,V,C,V,C,V</textarea>
+    <textarea class="field" name="structure" id="structure_input">C,V,C,V,C/,V/</textarea>
 
     <span>
         Amount: (e.g. 10)
