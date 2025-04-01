@@ -32,7 +32,7 @@ h1, h2, h3 {
     height: 16px;
     border: none;
     border-radius: 5px;
-    vertical-align: top;
+    vertical-align: middle;
 }
 
 textarea {
@@ -61,6 +61,13 @@ textarea {
     overflow-y: hidden;
     font-family: sans-serif;
     vertical-align: top;
+    border-radius: 5px;
+    line-height: 16px;
+    vertical-align: middle;
+}
+
+.individual_value {
+    width: 50px !important;
 }
 
 
