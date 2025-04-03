@@ -183,9 +183,12 @@ file_input.onchange = () => {
             amount_input.value = json.gencount;
             structure_input.value = json.structure;
 
+            groups.innerHTML = "";
+            group_obj = {};
+
             for (let letter in json.groups) {
                 let group = json.groups[letter];
-                addGroup(group, group.alias, group.value)
+                addGroup(letter, group.alias, group.value)
             }
 
             generateAll();

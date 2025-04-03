@@ -1,76 +1,83 @@
-<head>
-    <meta charset="UTF-8">
-    <title>Word Generator for Conlangs</title>
-    <link rel="stylesheet" href="style.css">
-    
-    <meta name="description" value="A simple word generator for conlangs">
-    <meta name="author" content="TheCreatorGrey">
-
-</head>
-<body>
-    <h1>
-        Word Generator for Conlangs
-    </h1>
-
-    <span style="white-space: pre-wrap;">
-    Here's how this works:
-
-    The generator will go through every comma separated value
-    in the "structure" input below.
-
-    If the value contains a forward slash (/), it will pick
-    a random item from between the slash(es). For example,
-    an value like "ed/ing" would add either "ed" or "ing". 
-    Also, if you put a slash following by nothing, the value 
-    will have a 50% chance of being added to the word.
-    If the value or item matches the letter ID of any of 
-    the groups  in the section below, it will pick a random 
-    value from that group. Otherwise, it will interpret it 
-    literally and add it to the word.
-
-    This process will be repeated for the number of times
-    specified in the input below (amount).
-
-    To add a group, enter a letter ID and alias (name)
-    into the corresponding input boxes, then press "+ Add".
-
-
-    Inspired by the AwkWords tool.
-    </span>
-    <hr><br>
-
-    <button class="button_large" id="save_config">Save Configuration</button>
-    <button class="button_large" id="load_config">Load Configuration</button>
-    <input type="file" id="file_input" style="display: none;" accept=".wgfc">
-
-    <h2>Groups: </h2>
-
-    <span id="groups">
-        Letter: <textarea class="small_input individual_value" id="group_add_letter_input">A</textarea>
-        Alias: <textarea class="small_input" id="group_add_alias_input">Change me</textarea>
-        <button class="inline_button" id="group_add_btn">+ Add</button>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Word Generator for Conlangs</title>
+        <link rel="stylesheet" href="style.css">
         
-        <br><br>
-    </span>
-
-    <h2>Specification: </h2>
-
-    <span>
-        Structure: (e.g. C,V,C,V)
-    </span>
-    <textarea class="field" name="structure" id="structure_input">C,V,C,V,C/,V/</textarea>
-
-    <span>
-        Amount: (e.g. 10)
-    </span>
-    <textarea class="field" name="amount" id="amount_input">10</textarea>
-
-    <h2>Output: </h2>
-
-    <button class="button_large" id="generate">Generate</button>
-
-    <span id="output">
-    </span>
-
-    <script src="index.js"></script>
-</body>
+        <meta name="description" value="A simple word generator for conlangs">
+        <meta name="author" content="TheCreatorGrey">
+    
+    </head>
+    <body>
+        <h1>
+            Word Generator for Conlangs
+        </h1>
+    
+        <span style="white-space: pre-wrap;">
+        Here's how this works:
+    
+        The generator will go through every comma separated value
+        in the "structure" input below.
+    
+        If the value contains a forward slash (/), it will pick
+        a random item from between the slash(es). For example,
+        an value like "ed/ing" would add either "ed" or "ing". 
+        Also, if you put a slash following by nothing, the value 
+        will have a 50% chance of being added to the word.
+        If the value or item matches the letter ID of any of 
+        the groups  in the section below, it will pick a random 
+        value from that group. Otherwise, it will interpret it 
+        literally and add it to the word.
+    
+        This process will be repeated for the number of times
+        specified in the input below (amount).
+    
+        To add a group, enter a letter ID and alias (name)
+        into the corresponding input boxes, then press "+ Add".
+    
+    
+        Inspired by the AwkWords tool.
+        </span>
+        <hr><br>
+    
+        <button class="button_large" id="save_config">Save Configuration</button>
+        <button class="button_large" id="load_config">Load Configuration</button>
+        <input type="file" id="file_input" style="display: none;" accept=".wgfc">
+    
+        <h2>Groups: </h2>
+    
+        <span>
+            Letter: <textarea class="small_input individual_value" id="group_add_letter_input">A</textarea> | 
+            Alias: <textarea class="small_input" id="group_add_alias_input">Change me</textarea>
+            <button class="inline_button" id="group_add_btn">+ Add</button>
+            
+            <br><br>
+    
+            <span id="groups">
+    
+            </span>
+        </span>
+    
+        <h2>Specification: </h2>
+    
+        <span>
+            Structure: (e.g. C,V,C,V)
+        </span>
+        <textarea class="field" name="structure" id="structure_input">C,V,C,V,C/,V/</textarea>
+    
+        <span>
+            Amount: (e.g. 10)
+        </span>
+        <textarea class="field" name="amount" id="amount_input">10</textarea>
+    
+        <h2>Output: </h2>
+    
+        <button class="button_large" id="generate">Generate</button>
+    
+        <span id="output">
+        </span>
+    
+        <script src="index.js"></script>
+    </body>
+</html>
